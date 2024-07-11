@@ -1,0 +1,16 @@
+def process_sentences(input_text):
+    sentences = []
+    temp = ""
+    for char in input_text:
+        temp += char
+        if char in ['.', '!', '?']:
+            sentences.append(temp.strip())
+            temp = ""
+    if temp:
+        sentences.append(temp.strip())
+    return sentences
+
+input_text = input("Enter a sentence or multiple sentences: ")
+sentence_list = process_sentences(input_text)
+
+print(sentence_list)
